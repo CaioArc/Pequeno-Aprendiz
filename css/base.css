@@ -1,0 +1,44 @@
+
+:root {
+  --purple: #6C3FC5;
+  --purple-dark: #4A2A8F;
+  --purple-light: #9B6EE8;
+  --purple-xlight: #EDE5FF;
+  --yellow: #FFD94A;
+  --yellow-dark: #E5BF00;
+  --blue: #3A7BD5;
+  --blue-light: #6FA3F0;
+  --blue-xlight: #E3EDFF;
+  --white: #FFFFFF;
+  --off-white: #F4F1FB;
+  --gray-50: #F8F6FC;
+  --gray-100: #EDEAF6;
+  --gray-300: #C5BDE8;
+  --gray-600: #6B6589;
+  --gray-800: #2D2650;
+  --success: #22C55E;
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  --sidebar-w: 268px;
+  --topbar-h: 68px;
+  --radius: 20px;
+  --shadow: 0 1px 2px rgba(45,38,80,0.04), 0 10px 28px rgba(108,63,197,0.08);
+  --shadow-lg: 0 16px 48px rgba(74,42,143,0.16);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background:
+    radial-gradient(1100px 520px at 88% -8%, rgba(155,110,232,0.16), transparent 55%),
+    radial-gradient(780px 420px at -8% 12%, rgba(58,123,213,0.10), transparent 50%),
+    var(--off-white);
+  color: var(--gray-800);
+  min-height: 100vh;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+

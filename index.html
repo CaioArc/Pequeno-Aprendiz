@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal do Aluno – Pequeno Aprendiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/pages.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/dark.css">
+</head>
+<body>
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader">
+  <div class="mascot mascot-md mascot-img"><img src="assets/mascot-boy.webp?v=4" alt="Pequeno Aprendiz"><svg class="logo-boy" viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pequeno Aprendiz">
+  <ellipse class="logo-shadow" cx="110" cy="242" rx="50" ry="7" fill="#2D2650" opacity="0.18"/>
+  <rect x="86" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <rect x="116" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <ellipse cx="95" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="125" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="90" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <ellipse cx="120" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <path d="M80 116 C62 122 44 138 40 156 C38 164 46 168 52 162 C60 150 72 136 82 128 Z" fill="#6C3FC5"/>
+  <path d="M140 116 C158 122 176 138 180 156 C182 164 174 168 168 162 C160 150 148 136 138 128 Z" fill="#6C3FC5"/>
+  <path d="M48 152 C42 164 52 176 70 180 C78 182 84 176 82 170 C76 160 60 154 48 152 Z" fill="#F5C09A"/>
+  <path d="M172 152 C178 164 168 176 150 180 C142 182 136 176 138 170 C144 160 160 154 172 152 Z" fill="#F5C09A"/>
+  <path d="M78 108 C76 102 82 98 92 98 H128 C138 98 144 102 142 108 L148 174 C148 184 140 190 128 190 H92 C80 190 72 184 72 174 Z" fill="#6C3FC5"/>
+  <path d="M92 98 L110 120 L128 98" fill="#FFFFFF" opacity="0.28"/>
+  <circle cx="110" cy="142" r="9" fill="#FFD94A"/>
+  <path d="M110 135.5 L112 140.2 H117 L113 143.1 L114.8 148 L110 145.2 L105.2 148 L107 143.1 L103 140.2 H108 Z" fill="#4A2A8F"/>
+  <rect x="102" y="90" width="16" height="16" rx="7" fill="#F5C09A"/>
+  <ellipse cx="110" cy="70" rx="34" ry="34" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="144" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="144" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <g class="boy-hair">
+    <path d="M76 64 C78 34 110 24 144 38 C148 46 148 62 144 68 C132 48 110 44 88 54 C82 58 76 62 76 64Z" fill="#2D2650"/>
+    <path d="M88 44 C98 28 112 26 124 32 C118 24 110 22 100 28 C92 32 88 38 88 44Z" fill="#4A2A8F"/>
+    <path d="M102 36 Q107 22 112 36" stroke="#6C3FC5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M112 34 Q118 20 124 36" stroke="#6C3FC5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="97" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-left">
+    <ellipse cx="97.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="99.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <ellipse cx="123" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-right">
+    <ellipse cx="123.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="125.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <path d="M88 62 Q97 56 106 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M114 62 Q123 56 132 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path class="boy-smile" d="M98 84 Q110 96 122 84" stroke="#C47A45" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="84" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="136" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <rect x="86" y="156" width="48" height="32" rx="3" fill="#FFF6D6"/>
+  <g class="page-left">
+    <rect x="64" y="150" width="48" height="40" rx="4" fill="#FFD94A"/>
+    <rect x="67" y="153" width="42" height="34" rx="2.5" fill="#FFF8D4"/>
+    <line x1="73" y1="162" x2="102" y2="162" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="169" x2="99" y2="169" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="176" x2="96" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <g class="page-right">
+    <rect x="108" y="150" width="48" height="40" rx="4" fill="#9B6EE8"/>
+    <rect x="111" y="153" width="42" height="34" rx="2.5" fill="#EDE5FF"/>
+    <line x1="117" y1="162" x2="146" y2="162" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="169" x2="143" y2="169" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="176" x2="140" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <rect x="107" y="150" width="6" height="40" rx="2.5" fill="#E5BF00"/>
+  <rect x="64" y="186" width="92" height="6" rx="3" fill="#C9930A"/>
+  <ellipse cx="72" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="67" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <ellipse cx="148" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="153" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <g class="logo-spark s1"><path d="M186 58 L189 66 L197 69 L189 72 L186 80 L183 72 L175 69 L183 66 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s2"><path d="M28 88 L30 94 L36 96 L30 98 L28 104 L26 98 L20 96 L26 94 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s3"><path d="M192 120 L194 125 L199 127 L194 129 L192 134 L190 129 L185 127 L190 125 Z" fill="#FFFFFF"/></g>
+</svg></div>
+  <div class="loader-text">Carregando Portal...</div>
+  <div class="loader-dots">
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+    <div class="loader-dot"></div>
+  </div>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ─── LOGIN PAGE ─── -->
+<div id="login-page">
+  <div class="login-bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+
+  <div class="login-left">
+    <div class="login-brand">
+      <div class="mascot mascot-lg mascot-hero">
+        <span class="mascot-glow" aria-hidden="true"></span>
+        <img class="hero-mascot" src="assets/mascot-boy.webp?v=4" alt="Pequeno Aprendiz lendo um livro">
+        <span class="mascot-spark" aria-hidden="true"></span>
+        <span class="mascot-spark s2" aria-hidden="true"></span>
+        <span class="mascot-spark s3" aria-hidden="true"></span>
+      <svg class="logo-boy" viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pequeno Aprendiz">
+  <ellipse class="logo-shadow" cx="110" cy="242" rx="50" ry="7" fill="#2D2650" opacity="0.18"/>
+  <rect x="86" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <rect x="116" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <ellipse cx="95" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="125" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="90" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <ellipse cx="120" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <path d="M80 116 C62 122 44 138 40 156 C38 164 46 168 52 162 C60 150 72 136 82 128 Z" fill="#6C3FC5"/>
+  <path d="M140 116 C158 122 176 138 180 156 C182 164 174 168 168 162 C160 150 148 136 138 128 Z" fill="#6C3FC5"/>
+  <path d="M48 152 C42 164 52 176 70 180 C78 182 84 176 82 170 C76 160 60 154 48 152 Z" fill="#F5C09A"/>
+  <path d="M172 152 C178 164 168 176 150 180 C142 182 136 176 138 170 C144 160 160 154 172 152 Z" fill="#F5C09A"/>
+  <path d="M78 108 C76 102 82 98 92 98 H128 C138 98 144 102 142 108 L148 174 C148 184 140 190 128 190 H92 C80 190 72 184 72 174 Z" fill="#6C3FC5"/>
+  <path d="M92 98 L110 120 L128 98" fill="#FFFFFF" opacity="0.28"/>
+  <circle cx="110" cy="142" r="9" fill="#FFD94A"/>
+  <path d="M110 135.5 L112 140.2 H117 L113 143.1 L114.8 148 L110 145.2 L105.2 148 L107 143.1 L103 140.2 H108 Z" fill="#4A2A8F"/>
+  <rect x="102" y="90" width="16" height="16" rx="7" fill="#F5C09A"/>
+  <ellipse cx="110" cy="70" rx="34" ry="34" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="144" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="144" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <g class="boy-hair">
+    <path d="M76 64 C78 34 110 24 144 38 C148 46 148 62 144 68 C132 48 110 44 88 54 C82 58 76 62 76 64Z" fill="#2D2650"/>
+    <path d="M88 44 C98 28 112 26 124 32 C118 24 110 22 100 28 C92 32 88 38 88 44Z" fill="#4A2A8F"/>
+    <path d="M102 36 Q107 22 112 36" stroke="#6C3FC5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M112 34 Q118 20 124 36" stroke="#6C3FC5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="97" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-left">
+    <ellipse cx="97.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="99.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <ellipse cx="123" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-right">
+    <ellipse cx="123.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="125.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <path d="M88 62 Q97 56 106 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M114 62 Q123 56 132 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path class="boy-smile" d="M98 84 Q110 96 122 84" stroke="#C47A45" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="84" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="136" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <rect x="86" y="156" width="48" height="32" rx="3" fill="#FFF6D6"/>
+  <g class="page-left">
+    <rect x="64" y="150" width="48" height="40" rx="4" fill="#FFD94A"/>
+    <rect x="67" y="153" width="42" height="34" rx="2.5" fill="#FFF8D4"/>
+    <line x1="73" y1="162" x2="102" y2="162" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="169" x2="99" y2="169" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="176" x2="96" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <g class="page-right">
+    <rect x="108" y="150" width="48" height="40" rx="4" fill="#9B6EE8"/>
+    <rect x="111" y="153" width="42" height="34" rx="2.5" fill="#EDE5FF"/>
+    <line x1="117" y1="162" x2="146" y2="162" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="169" x2="143" y2="169" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="176" x2="140" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <rect x="107" y="150" width="6" height="40" rx="2.5" fill="#E5BF00"/>
+  <rect x="64" y="186" width="92" height="6" rx="3" fill="#C9930A"/>
+  <ellipse cx="72" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="67" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <ellipse cx="148" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="153" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <g class="logo-spark s1"><path d="M186 58 L189 66 L197 69 L189 72 L186 80 L183 72 L175 69 L183 66 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s2"><path d="M28 88 L30 94 L36 96 L30 98 L28 104 L26 98 L20 96 L26 94 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s3"><path d="M192 120 L194 125 L199 127 L194 129 L192 134 L190 129 L185 127 L190 125 Z" fill="#FFFFFF"/></g>
+</svg></div>
+            <div class="school-chip"><i class="fas fa-university"></i> Colégio Pequeno Aprendiz</div>
+      <h1>Portal do<br><span>Aluno</span></h1>
+      <p>Acesso acadêmico institucional</p>
+      <div class="login-pills">
+        <span><i class="fas fa-chart-bar"></i> Boletim</span>
+        <span><i class="fas fa-laptop"></i> AVA</span>
+        <span><i class="fas fa-book"></i> Biblioteca</span>
+        <span><i class="fas fa-file-invoice-dollar"></i> Financeiro</span>
+      </div>
+      <div class="login-features">
+        <div class="feat-item">
+          <div class="feat-icon"><i class="fas fa-user-graduate"></i></div>
+          <span>Notas, frequência e histórico escolar em um só lugar</span>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <span>Aulas, materiais e conversa com professores</span>
+        </div>
+        <div class="feat-item">
+          <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
+          <span>Acesso separado para alunos e para a equipe docente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-right">
+    <div class="login-card">
+      <div class="login-card-head">
+        <div class="school-mini"><i class="fas fa-graduation-cap"></i> Portal Acadêmico</div>
+        <div class="year-tag">2026/2</div>
+      </div>
+
+      <!-- ABAS LOGIN / CADASTRO -->
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">
+          <i class="fas fa-sign-in-alt"></i> Entrar
+        </button>
+        <button class="auth-tab" id="tabSignup" onclick="switchAuthTab('signup')">
+          <i class="fas fa-user-plus"></i> Criar Conta
+        </button>
+      </div>
+
+      <!-- ── PAINEL LOGIN ── -->
+      <div id="login-panel">
+        <h2 id="loginTitle">Entrar no portal</h2>
+        <p class="subtitle" id="loginSubtitle">Use o CPF e a senha cadastrados na secretaria</p>
+
+        <div class="role-switch">
+          <button type="button" class="role-btn active" id="roleAluno" onclick="setLoginRole('aluno')">
+            <i class="fas fa-user-graduate"></i>
+            <span>Aluno</span>
+            <small>Portal do estudante</small>
+          </button>
+          <button type="button" class="role-btn" id="roleProf" onclick="setLoginRole('professor')">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Professor</span>
+            <small>Equipe da escola</small>
+          </button>
+        </div>
+        <div class="role-hint" id="roleHint">Acesso exclusivo para docentes e profissionais da instituição.</div>
+
+        <div class="form-group">
+          <label>CPF</label>
+          <div class="input-wrap">
+            <input type="text" class="form-input" id="cpfInput" placeholder="000.000.000-00" maxlength="14">
+            <i class="fas fa-id-card"></i>
+          </div>
+          <p class="error-msg" id="cpfError">CPF inválido. Tente novamente.</p>
+        </div>
+
+        <div class="form-group">
+          <label>Senha</label>
+          <div class="input-wrap" style="position:relative">
+            <input type="password" class="form-input" id="pwInput" placeholder="Sua senha">
+            <i class="fas fa-lock" style="left:14px;position:absolute;top:50%;transform:translateY(-50%)"></i>
+            <button class="toggle-pw" id="togglePw" type="button"><i class="fas fa-eye" id="eyeIcon"></i></button>
+          </div>
+          <p class="error-msg" id="pwError">Senha incorreta. Tente novamente.</p>
+        </div>
+
+        <div class="form-options">
+          <label class="remember">
+            <input type="checkbox" id="rememberMe"> Lembrar-me
+          </label>
+          <a class="forgot-link" id="forgotLink">Esqueci a senha</a>
+        </div>
+
+        <button class="btn-login" id="btnLogin">
+          <span id="btnLoginText">Entrar no Portal</span>
+          <div class="spinner" id="loginSpinner"></div>
+        </button>
+
+        <div class="login-footer">
+          Ainda não tem conta? <a style="color:var(--purple);font-weight:500;cursor:pointer" onclick="switchAuthTab('signup')">Criar conta gratuita</a>
+        </div>
+      </div>
+
+      <!-- ── PAINEL CADASTRO ── -->
+      <div id="signup-panel">
+        <h2 id="signupTitle">Criar Conta</h2>
+        <p class="subtitle" id="signupSubtitle">Preencha seus dados para se cadastrar</p>
+
+        <div class="role-switch">
+          <button type="button" class="role-btn active" id="regRoleAluno" onclick="setLoginRole('aluno')">
+            <i class="fas fa-user-graduate"></i>
+            <span>Aluno</span>
+            <small>Matrícula escolar</small>
+          </button>
+          <button type="button" class="role-btn" id="regRoleProf" onclick="setLoginRole('professor')">
+            <i class="fas fa-chalkboard-teacher"></i>
+            <span>Professor</span>
+            <small>Equipe da escola</small>
+          </button>
+        </div>
+
+        <!-- Sucesso do cadastro -->
+          <div class="signup-success" id="signupSuccess">
+            <div class="success-icon" id="successIcon">✅</div>
+            <h3 id="successTitle">Conta criada com sucesso!</h3>
+            <p id="successText">Enviamos um e-mail de confirmação. Verifique sua caixa de entrada e acesse com seu CPF e senha.</p>
+            <button class="btn-login" style="margin-top:20px" onclick="switchAuthTab('login')">
+              Ir para o Login
+            </button>
+          </div>
+
+        <div id="signupForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Nome</label>
+              <div class="input-wrap">
+                <input type="text" class="form-input" id="regNome" placeholder="Seu nome">
+                <i class="fas fa-user"></i>
+              </div>
+              <p class="error-msg" id="regNomeError">Nome obrigatório.</p>
+            </div>
+            <div class="form-group">
+              <label>Sobrenome</label>
+              <div class="input-wrap">
+                <input type="text" class="form-input" id="regSobrenome" placeholder="Sobrenome">
+                <i class="fas fa-user"></i>
+              </div>
+              <p class="error-msg" id="regSobrenomeError">Sobrenome obrigatório.</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>CPF</label>
+            <div class="input-wrap">
+              <input type="text" class="form-input" id="regCpf" placeholder="000.000.000-00" maxlength="14">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <p class="error-msg" id="regCpfError">CPF inválido.</p>
+          </div>
+
+          <div class="form-group">
+            <label>E-mail</label>
+            <div class="input-wrap">
+              <input type="email" class="form-input" id="regEmail" placeholder="seu@email.com">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <p class="error-msg" id="regEmailError">E-mail inválido.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Data de Nascimento</label>
+              <div class="input-wrap">
+                <input type="date" class="form-input" id="regNasc" style="padding-left:44px">
+                <i class="fas fa-calendar"></i>
+              </div>
+              <p class="error-msg" id="regNascError">Data obrigatória.</p>
+            </div>
+            <div class="form-group">
+              <label>Turno</label>
+              <div class="input-wrap">
+                <select class="select-input" id="regTurno">
+                  <option value="">Selecione</option>
+                  <option>Matutino</option>
+                  <option>Vespertino</option>
+                  <option>Noturno</option>
+                </select>
+                <i class="fas fa-clock"></i>
+              </div>
+              <p class="error-msg" id="regTurnoError">Selecione o turno.</p>
+            </div>
+          </div>
+
+          <div class="form-group signup-aluno" id="regSerieWrap">
+            <label>Série / Turma</label>
+            <div class="input-wrap">
+              <select class="select-input" id="regSerie">
+                <option value="">Selecione sua série</option>
+                <option>1º Ano – Ensino Médio</option>
+                <option>2º Ano – Ensino Médio</option>
+                <option>3º Ano – Ensino Médio</option>
+                <option>6º Ano – Ensino Fundamental</option>
+                <option>7º Ano – Ensino Fundamental</option>
+                <option>8º Ano – Ensino Fundamental</option>
+                <option>9º Ano – Ensino Fundamental</option>
+              </select>
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <p class="error-msg" id="regSerieError">Selecione a série.</p>
+          </div>
+
+          <div class="form-group signup-prof" id="regDiscWrap" style="display:none">
+            <label>Disciplina principal</label>
+            <div class="input-wrap">
+              <select class="select-input" id="regDisciplina">
+                <option value="">Selecione a disciplina</option>
+                <option>Matemática</option>
+                <option>Português</option>
+                <option>Física</option>
+                <option>Química</option>
+                <option>Biologia</option>
+                <option>História</option>
+                <option>Geografia</option>
+                <option>Inglês</option>
+                <option>Educação Física</option>
+              </select>
+              <i class="fas fa-book"></i>
+            </div>
+            <p class="error-msg" id="regDiscError">Selecione a disciplina.</p>
+          </div>
+
+          <div class="form-group">
+            <label>Senha</label>
+            <div class="input-wrap" style="position:relative">
+              <input type="password" class="form-input" id="regSenha" placeholder="Mínimo 8 caracteres" oninput="checkStrength(this.value)">
+              <i class="fas fa-lock" style="left:14px;position:absolute;top:50%;transform:translateY(-50%)"></i>
+              <button class="toggle-pw" type="button" onclick="toggleField('regSenha',this)"><i class="fas fa-eye"></i></button>
+            </div>
+            <div class="password-strength">
+              <div class="strength-bar">
+                <div class="strength-seg" id="seg1"></div>
+                <div class="strength-seg" id="seg2"></div>
+                <div class="strength-seg" id="seg3"></div>
+                <div class="strength-seg" id="seg4"></div>
+              </div>
+              <div class="strength-label" id="strengthLabel">Digite uma senha</div>
+            </div>
+            <p class="error-msg" id="regSenhaError">Senha muito fraca (mín. 8 caracteres).</p>
+          </div>
+
+          <div class="form-group">
+            <label>Confirmar Senha</label>
+            <div class="input-wrap" style="position:relative">
+              <input type="password" class="form-input" id="regConfirm" placeholder="Repita a senha">
+              <i class="fas fa-lock" style="left:14px;position:absolute;top:50%;transform:translateY(-50%)"></i>
+              <button class="toggle-pw" type="button" onclick="toggleField('regConfirm',this)"><i class="fas fa-eye"></i></button>
+            </div>
+            <p class="error-msg" id="regConfirmError">As senhas não coincidem.</p>
+          </div>
+
+          <div class="terms-check">
+            <input type="checkbox" id="acceptTerms">
+            <label for="acceptTerms">Li e aceito os <a href="#" onclick="event.preventDefault();event.stopPropagation();openLegal('termos');">Termos de Uso</a> e a <a href="#" onclick="event.preventDefault();event.stopPropagation();openLegal('privacidade');">Política de Privacidade</a> da instituição.</label>
+          </div>
+          <p class="error-msg" id="termsError">Você precisa aceitar os termos.</p>
+
+          <button class="btn-login" id="btnSignup" onclick="submitSignup()">
+            <span id="btnSignupText">Criar Minha Conta</span>
+            <div class="spinner" id="signupSpinner"></div>
+          </button>
+
+          <div class="login-footer">
+            Já tem conta? <a style="color:var(--purple);font-weight:500;cursor:pointer" onclick="switchAuthTab('login')">Fazer login</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FORGOT PASSWORD MODAL -->
+<div class="modal-overlay" id="forgotModal">
+  <div class="modal-box">
+    <h3>Recuperar Senha</h3>
+    <p>Informe seu CPF e e-mail cadastrado para receber o link de recuperação.</p>
+
+    <div class="form-group">
+      <label>CPF</label>
+      <div class="input-wrap">
+        <input type="text" class="form-input" id="forgotCpf" placeholder="000.000.000-00" maxlength="14">
+        <i class="fas fa-id-card"></i>
+      </div>
+      <p class="error-msg" id="forgotCpfError">Informe um CPF válido.</p>
+    </div>
+
+    <div class="form-group">
+      <label>E-mail</label>
+      <div class="input-wrap">
+        <input type="email" class="form-input" id="forgotEmail" placeholder="seu@email.com">
+        <i class="fas fa-envelope"></i>
+      </div>
+      <p class="error-msg" id="forgotEmailError">Informe o e-mail cadastrado.</p>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-outline" id="cancelForgot">Cancelar</button>
+      <button class="btn-primary" id="sendRecovery">Enviar Link</button>
+    </div>
+  </div>
+</div>
+
+<!-- GENERIC DETAIL MODAL -->
+<div class="modal-overlay" id="appModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <div id="appModalContent"></div>
+  </div>
+</div>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ─── APP SHELL ─── -->
+<div id="app">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+<div class="mascot mascot-sm mascot-img"><img src="assets/mascot-boy.webp?v=4" alt="Pequeno Aprendiz"><svg class="logo-boy" viewBox="0 0 220 250" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Pequeno Aprendiz">
+  <ellipse class="logo-shadow" cx="110" cy="242" rx="50" ry="7" fill="#2D2650" opacity="0.18"/>
+  <rect x="86" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <rect x="116" y="176" width="18" height="40" rx="9" fill="#F5C09A"/>
+  <ellipse cx="95" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="125" cy="218" rx="14" ry="7.5" fill="#4A2A8F"/>
+  <ellipse cx="90" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <ellipse cx="120" cy="215" rx="5" ry="2.4" fill="#6C3FC5" opacity="0.5"/>
+  <path d="M80 116 C62 122 44 138 40 156 C38 164 46 168 52 162 C60 150 72 136 82 128 Z" fill="#6C3FC5"/>
+  <path d="M140 116 C158 122 176 138 180 156 C182 164 174 168 168 162 C160 150 148 136 138 128 Z" fill="#6C3FC5"/>
+  <path d="M48 152 C42 164 52 176 70 180 C78 182 84 176 82 170 C76 160 60 154 48 152 Z" fill="#F5C09A"/>
+  <path d="M172 152 C178 164 168 176 150 180 C142 182 136 176 138 170 C144 160 160 154 172 152 Z" fill="#F5C09A"/>
+  <path d="M78 108 C76 102 82 98 92 98 H128 C138 98 144 102 142 108 L148 174 C148 184 140 190 128 190 H92 C80 190 72 184 72 174 Z" fill="#6C3FC5"/>
+  <path d="M92 98 L110 120 L128 98" fill="#FFFFFF" opacity="0.28"/>
+  <circle cx="110" cy="142" r="9" fill="#FFD94A"/>
+  <path d="M110 135.5 L112 140.2 H117 L113 143.1 L114.8 148 L110 145.2 L105.2 148 L107 143.1 L103 140.2 H108 Z" fill="#4A2A8F"/>
+  <rect x="102" y="90" width="16" height="16" rx="7" fill="#F5C09A"/>
+  <ellipse cx="110" cy="70" rx="34" ry="34" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="144" cy="72" rx="6.5" ry="8.5" fill="#F5C09A"/>
+  <ellipse cx="76" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="144" cy="72" rx="3" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <g class="boy-hair">
+    <path d="M76 64 C78 34 110 24 144 38 C148 46 148 62 144 68 C132 48 110 44 88 54 C82 58 76 62 76 64Z" fill="#2D2650"/>
+    <path d="M88 44 C98 28 112 26 124 32 C118 24 110 22 100 28 C92 32 88 38 88 44Z" fill="#4A2A8F"/>
+    <path d="M102 36 Q107 22 112 36" stroke="#6C3FC5" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M112 34 Q118 20 124 36" stroke="#6C3FC5" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="97" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-left">
+    <ellipse cx="97.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="99.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <ellipse cx="123" cy="72" rx="8" ry="8.4" fill="#FFFFFF"/>
+  <g class="boy-eye-right">
+    <ellipse cx="123.6" cy="73.2" rx="4.2" ry="4.8" fill="#2D2650"/>
+    <ellipse cx="125.4" cy="71.2" rx="1.7" ry="1.7" fill="#FFFFFF"/>
+  </g>
+  <path d="M88 62 Q97 56 106 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path d="M114 62 Q123 56 132 62" stroke="#2D2650" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+  <path class="boy-smile" d="M98 84 Q110 96 122 84" stroke="#C47A45" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+  <ellipse cx="84" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <ellipse cx="136" cy="82" rx="7" ry="4.6" fill="#FFAAB0" opacity="0.5"/>
+  <rect x="86" y="156" width="48" height="32" rx="3" fill="#FFF6D6"/>
+  <g class="page-left">
+    <rect x="64" y="150" width="48" height="40" rx="4" fill="#FFD94A"/>
+    <rect x="67" y="153" width="42" height="34" rx="2.5" fill="#FFF8D4"/>
+    <line x1="73" y1="162" x2="102" y2="162" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="169" x2="99" y2="169" stroke="#9B6EE8" stroke-width="2" stroke-linecap="round"/>
+    <line x1="73" y1="176" x2="96" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <g class="page-right">
+    <rect x="108" y="150" width="48" height="40" rx="4" fill="#9B6EE8"/>
+    <rect x="111" y="153" width="42" height="34" rx="2.5" fill="#EDE5FF"/>
+    <line x1="117" y1="162" x2="146" y2="162" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="169" x2="143" y2="169" stroke="#6C3FC5" stroke-width="2" stroke-linecap="round"/>
+    <line x1="117" y1="176" x2="140" y2="176" stroke="#C5BDE8" stroke-width="1.7" stroke-linecap="round"/>
+  </g>
+  <rect x="107" y="150" width="6" height="40" rx="2.5" fill="#E5BF00"/>
+  <rect x="64" y="186" width="92" height="6" rx="3" fill="#C9930A"/>
+  <ellipse cx="72" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="67" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <ellipse cx="148" cy="176" rx="11" ry="10" fill="#F5C09A"/>
+  <ellipse cx="153" cy="172" rx="3.2" ry="5" fill="#E8A87C"/>
+  <g class="logo-spark s1"><path d="M186 58 L189 66 L197 69 L189 72 L186 80 L183 72 L175 69 L183 66 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s2"><path d="M28 88 L30 94 L36 96 L30 98 L28 104 L26 98 L20 96 L26 94 Z" fill="#FFD94A"/></g>
+  <g class="logo-spark s3"><path d="M192 120 L194 125 L199 127 L194 129 L192 134 L190 129 L185 127 L190 125 Z" fill="#FFFFFF"/></g>
+</svg></div>
+            <div class="logo-text">
+        <span class="name">Pequeno Aprendiz</span>
+        <span class="portal" id="portalLabel">Portal do Aluno</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <div class="nav-section-title">Principal</div>
+        <div class="nav-item active" id="navHome" data-page="dashboard">
+          <i class="fas fa-home"></i> <span id="navHomeLabel">Dashboard</span>
+        </div>
+      </div>
+
+      <div class="nav-section nav-aluno">
+        <div class="nav-section-title">Acadêmico</div>
+        <div class="nav-item" data-page="calendario">
+          <i class="fas fa-calendar-alt"></i> Calendário
+        </div>
+        <div class="nav-item" data-page="grade">
+          <i class="fas fa-book-open"></i> Grade de Disciplinas
+        </div>
+        <div class="nav-item" data-page="historico">
+          <i class="fas fa-scroll"></i> Histórico Escolar
+        </div>
+        <div class="nav-item" data-page="boletim">
+          <i class="fas fa-chart-bar"></i> Boletim de Notas
+        </div>
+      </div>
+
+      <div class="nav-section nav-aluno">
+        <div class="nav-section-title">Financeiro</div>
+        <div class="nav-item" data-page="financeiro">
+          <i class="fas fa-file-invoice-dollar"></i> Financeiro
+          <span class="nav-badge" data-badge="financeiro">1</span>
+        </div>
+      </div>
+
+      <div class="nav-section nav-aluno">
+        <div class="nav-section-title">Aprendizagem</div>
+        <div class="nav-item" data-page="ava">
+          <i class="fas fa-laptop-code"></i> AVA
+        </div>
+        <div class="nav-item" data-page="biblioteca">
+          <i class="fas fa-book-open"></i> Biblioteca Virtual
+        </div>
+      </div>
+
+      <div class="nav-section nav-aluno">
+        <div class="nav-section-title">Serviços</div>
+        <div class="nav-item" data-page="mensagens">
+          <i class="fas fa-comment-dots"></i> Mensagens
+          <span class="nav-badge" data-badge="mensagens">3</span>
+        </div>
+        <div class="nav-item" data-page="secretaria">
+          <i class="fas fa-building"></i> Secretaria
+        </div>
+        <div class="nav-item" data-page="perfil">
+          <i class="fas fa-user"></i> Meu Perfil
+        </div>
+        <div class="nav-item" data-page="carteira">
+          <i class="fas fa-id-card"></i> Carteira de Estudante
+        </div>
+        <div class="nav-item" data-page="avaliacao">
+          <i class="fas fa-star"></i> Avaliação de Docentes
+        </div>
+      </div>
+
+      <div class="nav-section nav-prof">
+        <div class="nav-section-title">Docência</div>
+        <div class="nav-item" data-page="turmas">
+          <i class="fas fa-users"></i> Minhas Turmas
+        </div>
+        <div class="nav-item" data-page="lancar-notas">
+          <i class="fas fa-pen-to-square"></i> Lançar Notas
+        </div>
+        <div class="nav-item" data-page="frequencia">
+          <i class="fas fa-clipboard-check"></i> Frequência
+        </div>
+        <div class="nav-item" data-page="diario">
+          <i class="fas fa-book"></i> Diário de Classe
+        </div>
+        <div class="nav-item" data-page="calendario">
+          <i class="fas fa-calendar-alt"></i> Calendário
+        </div>
+      </div>
+
+      <div class="nav-section nav-prof">
+        <div class="nav-section-title">Comunicação</div>
+        <div class="nav-item" data-page="mensagens">
+          <i class="fas fa-comment-dots"></i> Mensagens
+          <span class="nav-badge" data-badge="mensagens">2</span>
+        </div>
+        <div class="nav-item" data-page="avisos">
+          <i class="fas fa-bullhorn"></i> Avisos às turmas
+        </div>
+      </div>
+
+      <div class="nav-section nav-prof">
+        <div class="nav-section-title">Conta</div>
+        <div class="nav-item" data-page="perfil">
+          <i class="fas fa-user"></i> Meu Perfil
+        </div>
+      </div>
+    </nav>
+
+    <div class="sidebar-user">
+      <img class="photo-avatar js-user-photo" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80" alt="Aluna">
+      <div class="user-info">
+        <div class="user-name">Ana Martins</div>
+        <div class="user-role">Aluna – 3º Ano</div>
+      </div>
+      <button class="btn-logout" id="btnLogout" title="Sair"><i class="fas fa-sign-out-alt"></i></button>
+    </div>
+  </aside>
+
+  <!-- MAIN WRAP -->
+  <div class="main-wrap">
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <button class="hamburger" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="btn-back" id="btnBack" title="Voltar" aria-label="Voltar à página anterior" disabled>
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <div class="topbar-title" id="topbarTitle">Dashboard</div>
+
+      <div class="topbar-search" id="topbarSearchWrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="topbarSearchInput" placeholder="Buscar no portal..." autocomplete="off">
+        <div class="search-results" id="searchResults"></div>
+      </div>
+
+      <div class="topbar-actions">
+        <button class="topbar-btn" id="themeToggle" title="Modo escuro" aria-label="Alternar modo escuro">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="topbar-btn" id="notifBtn">
+          <i class="fas fa-bell"></i>
+          <span class="notif-dot"></span>
+        </button>
+        <div class="profile-wrap" id="profileWrap">
+          <img class="photo-avatar md js-user-photo" id="topbarAvatar" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80" alt="Meu perfil">
+          <div class="profile-menu" id="profileMenu">
+            <div class="profile-menu-head">
+              <img class="photo-avatar js-user-photo" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=120&q=80" alt="">
+              <div>
+                <div class="pm-name user-name">Ana Martins</div>
+                <div class="pm-role user-role">Aluna – 3º Ano</div>
+              </div>
+            </div>
+            <div class="profile-menu-item" onclick="goToPage('perfil')">
+              <i class="fas fa-user"></i> Meu perfil
+            </div>
+            <div class="profile-menu-item menu-aluno" onclick="goToPage('carteira')">
+              <i class="fas fa-id-card"></i> Carteira de estudante
+            </div>
+            <div class="profile-menu-item menu-aluno" onclick="goToPage('financeiro')">
+              <i class="fas fa-file-invoice-dollar"></i> Pagamentos
+            </div>
+            <div class="profile-menu-item menu-aluno" onclick="goToPage('boletim')">
+              <i class="fas fa-chart-bar"></i> Boletim
+            </div>
+            <div class="profile-menu-item menu-aluno" onclick="goToPage('historico')">
+              <i class="fas fa-scroll"></i> Histórico escolar
+            </div>
+            <div class="profile-menu-item menu-prof" onclick="goToPage('turmas')">
+              <i class="fas fa-users"></i> Minhas turmas
+            </div>
+            <div class="profile-menu-item menu-prof" onclick="goToPage('lancar-notas')">
+              <i class="fas fa-pen-to-square"></i> Lançar notas
+            </div>
+            <div class="profile-menu-item menu-prof" onclick="goToPage('frequencia')">
+              <i class="fas fa-clipboard-check"></i> Frequência
+            </div>
+            <div class="profile-menu-sep"></div>
+            <div class="profile-menu-item" onclick="openPhotoPicker()">
+              <i class="fas fa-camera"></i> Alterar foto
+            </div>
+            <div class="profile-menu-item danger" id="menuLogout">
+              <i class="fas fa-sign-out-alt"></i> Sair
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="file" id="photoInput" accept="image/*" hidden>
+    </header>
+
+    <!-- NOTIFICATIONS PANEL -->
+    <div class="notif-panel" id="notifPanel">
+      <div class="notif-header">
+        <h4>Notificações</h4>
+        <span class="notif-clear" id="clearNotif">Marcar todas como lidas</span>
+      </div>
+      <div class="notif-list">
+        <div class="notif-item unread" data-notif="boleto" data-goto="financeiro">
+          <div class="notif-icon-wrap red"><i class="fas fa-exclamation-circle"></i></div>
+          <div class="notif-text"><p>Boleto de Maio vence em 3 dias!</p><span>Há 2 horas</span></div>
+        </div>
+        <div class="notif-item unread" data-notif="msg-carlos" data-goto="mensagens">
+          <div class="notif-icon-wrap purple"><i class="fas fa-comment"></i></div>
+          <div class="notif-text"><p>Prof. Carlos respondeu sua dúvida em Matemática</p><span>Há 4 horas</span></div>
+        </div>
+        <div class="notif-item unread" data-notif="aula-quimica" data-goto="ava">
+          <div class="notif-icon-wrap yellow"><i class="fas fa-book"></i></div>
+          <div class="notif-text"><p>Nova aula disponível: Química Orgânica</p><span>Há 1 dia</span></div>
+        </div>
+        <div class="notif-item" data-notif="prova-fisica" data-goto="calendario">
+          <div class="notif-icon-wrap blue"><i class="fas fa-calendar"></i></div>
+          <div class="notif-text"><p>Prova de Física agendada para 28/10</p><span>Há 2 dias</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <main class="content">
+
+      <!-- ─── DASHBOARD PAGE ─── -->
+      <div class="page active page-aluno" id="page-dashboard">
+        <div class="greeting-banner">
+          <div class="greeting-inner">
+            <div class="greeting-text">
+              <div class="greeting-kicker">Portal acadêmico · 2026/2</div>
+              <h3>Ola, Ana! Bem-vinda de volta</h3>
+              <p>Segunda-feira, 19 de Outubro de 2026</p>
+              <div class="greeting-meta">
+                <span class="greeting-chip"><i class="fas fa-graduation-cap"></i> 3o Ano A</span>
+                <span class="greeting-chip"><i class="fas fa-clock"></i> Proxima aula: Fisica 08:00</span>
+                <span class="greeting-chip"><i class="fas fa-star"></i> Media 8.4</span>
+              </div>
+            </div>
+            <div class="greeting-photos">
+              <img src="https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?auto=format&fit=crop&w=200&q=80" alt="Sala de aula">
+              <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=220&q=80" alt="Estudo">
+              <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=200&q=80" alt="Biblioteca">
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card" data-goto="boletim">
+            <div class="stat-icon purple"><i class="fas fa-star"></i></div>
+            <div>
+              <div class="stat-value">8.4</div>
+              <div class="stat-label">Média Geral</div>
+              <div class="stat-trend up">▲ +0.3 este mês</div>
+            </div>
+          </div>
+          <div class="stat-card" data-goto="historico">
+            <div class="stat-icon yellow"><i class="fas fa-check-circle"></i></div>
+            <div>
+              <div class="stat-value">92%</div>
+              <div class="stat-label">Frequência</div>
+              <div class="stat-trend up">▲ Regular</div>
+            </div>
+          </div>
+          <div class="stat-card" data-goto="calendario">
+            <div class="stat-icon blue"><i class="fas fa-tasks"></i></div>
+            <div>
+              <div class="stat-value">5</div>
+              <div class="stat-label">Atividades Pendentes</div>
+              <div class="stat-trend down">▼ 2 vencem hoje</div>
+            </div>
+          </div>
+          <div class="stat-card" data-goto="grade">
+            <div class="stat-icon green"><i class="fas fa-book-reader"></i></div>
+            <div>
+              <div class="stat-value">7</div>
+              <div class="stat-label">Disciplinas</div>
+              <div class="stat-trend up">▲ Em dia</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hud-hero">
+          <div class="hero-panel" data-hero="campus">
+            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&w=900&q=80" alt="Campus">
+            <div class="hero-caption">
+              <h4>Campus Pequeno Aprendiz</h4>
+              <p>Laboratorios, biblioteca e salas interativas</p>
+            </div>
+          </div>
+          <div class="hero-panel" data-hero="cultural">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=700&q=80" alt="Alunos">
+            <div class="hero-caption">
+              <h4>Turma 3o Ano A</h4>
+              <p>Semana cultural de 07 a 11 de Abril</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dash-grid">
+          <div>
+            <div class="card" style="margin-bottom:16px">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-chart-bar"></i> Notas Recentes</div>
+                <a class="card-link" onclick="goToPage('boletim')">Ver boletim completo →</a>
+              </div>
+              <div class="grades-list">
+                <div class="grade-item" data-goto="boletim">
+                  <div><div class="grade-subject">Matemática</div><div class="grade-meta">Prova · 20/03</div></div>
+                  <div class="grade-value good">9.5</div>
+                </div>
+                <div class="grade-item" style="border-color:var(--blue)" data-goto="boletim">
+                  <div><div class="grade-subject">Português</div><div class="grade-meta">Trabalho · 18/03</div></div>
+                  <div class="grade-value good">8.8</div>
+                </div>
+                <div class="grade-item" style="border-color:var(--warning)" data-goto="boletim">
+                  <div><div class="grade-subject">Física</div><div class="grade-meta">Simulado · 15/03</div></div>
+                  <div class="grade-value ok">6.5</div>
+                </div>
+                <div class="grade-item" style="border-color:var(--success)" data-goto="boletim">
+                  <div><div class="grade-subject">História</div><div class="grade-meta">Prova · 12/03</div></div>
+                  <div class="grade-value good">9.0</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-tasks"></i> Próximas Atividades</div>
+                <a class="card-link" onclick="goToPage('calendario')">Ver calendário →</a>
+              </div>
+              <div class="activities-list">
+                <div class="activity-item" data-goto="calendario">
+                  <div class="activity-dot purple"></div>
+                  <div class="activity-info">
+                    <div class="activity-title">Prova de Física</div>
+                    <div class="activity-subject">Cap. 5 – Termodinâmica</div>
+                  </div>
+                  <div class="activity-date">28/03</div>
+                </div>
+                <div class="activity-item" data-goto="calendario">
+                  <div class="activity-dot blue"></div>
+                  <div class="activity-info">
+                    <div class="activity-title">Entrega – Redação</div>
+                    <div class="activity-subject">Português – Dissertação</div>
+                  </div>
+                  <div class="activity-date">30/03</div>
+                </div>
+                <div class="activity-item" data-goto="calendario">
+                  <div class="activity-dot yellow"></div>
+                  <div class="activity-info">
+                    <div class="activity-title">Seminário de Biologia</div>
+                    <div class="activity-subject">Grupo C – Genética</div>
+                  </div>
+                  <div class="activity-date">02/04</div>
+                </div>
+                <div class="activity-item" data-goto="calendario">
+                  <div class="activity-dot purple"></div>
+                  <div class="activity-info">
+                    <div class="activity-title">Lista – Matemática</div>
+                    <div class="activity-subject">Funções Trigonométricas</div>
+                  </div>
+                  <div class="activity-date">05/04</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card" style="margin-bottom:16px">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-calendar-alt"></i> <span id="miniCalMonth">Calendário</span></div>
+                <div style="display:flex;gap:4px">
+                  <button class="cal-nav" id="miniCalPrev" title="Mês anterior"><i class="fas fa-chevron-left"></i></button>
+                  <button class="cal-nav" id="miniCalNext" title="Próximo mês"><i class="fas fa-chevron-right"></i></button>
+                </div>
+              </div>
+              <div class="mini-calendar">
+                <div class="cal-days" id="miniCalGrid"></div>
+              </div>
+              <button class="btn-today" style="margin-top:14px;width:100%" onclick="goToPage('calendario')">
+                Abrir calendário completo
+              </button>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title"><i class="fas fa-bullhorn"></i> Avisos</div>
+                <span style="font-size:0.7rem;background:var(--danger);color:white;padding:2px 8px;border-radius:20px;font-weight:700">NOVO</span>
+              </div>
+              <div class="notices-list">
+                <div class="notice-item urgent" data-goto="secretaria">
+                  <div class="notice-tag">Urgente</div>
+                  <div class="notice-title">Rematrícula 2026/2 até 31/10</div>
+                  <div class="notice-date">Publicado em 20/10/2026</div>
+                </div>
+                <div class="notice-item info" data-goto="calendario">
+                  <div class="notice-tag">Informativo</div>
+                  <div class="notice-title">Semana cultural: 07 a 11 de Abril</div>
+                  <div class="notice-date">Publicado em 18/10/2026</div>
+                </div>
+                <div class="notice-item success" data-goto="ava">
+                  <div class="notice-tag">Novidade</div>
+                  <div class="notice-title">Novas videoaulas de Química disponíveis</div>
+                  <div class="notice-date">Publicado em 15/10/2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-dash-prof">
+        <div class="greeting-banner">
+          <div class="greeting-inner">
+            <div class="greeting-text">
+              <div class="greeting-kicker">Portal docente · 2026/2</div>
+              <h3 id="greetProf">Ola, Professor!</h3>
+              <p>Semestre letivo em andamento</p>
+              <div class="greeting-meta">
+                <span class="greeting-chip"><i class="fas fa-chalkboard-teacher"></i> <span id="chipDisc">Matemática</span></span>
+                <span class="greeting-chip"><i class="fas fa-users"></i> 4 turmas</span>
+                <span class="greeting-chip"><i class="fas fa-clock"></i> Próxima aula: 3º A 08:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card" onclick="goToPage('turmas')">
+            <div class="stat-icon purple"><i class="fas fa-users"></i></div>
+            <div><div class="stat-value">128</div><div class="stat-label">Alunos</div><div class="stat-trend up">▲ 4 turmas ativas</div></div>
+          </div>
+          <div class="stat-card" onclick="goToPage('lancar-notas')">
+            <div class="stat-icon yellow"><i class="fas fa-pen"></i></div>
+            <div><div class="stat-value">12</div><div class="stat-label">Notas a lançar</div><div class="stat-trend down">▼ 3º bimestre</div></div>
+          </div>
+          <div class="stat-card" onclick="goToPage('frequencia')">
+            <div class="stat-icon blue"><i class="fas fa-clipboard-check"></i></div>
+            <div><div class="stat-value">96%</div><div class="stat-label">Frequência média</div><div class="stat-trend up">▲ Regular</div></div>
+          </div>
+          <div class="stat-card" onclick="goToPage('avisos')">
+            <div class="stat-icon green"><i class="fas fa-bullhorn"></i></div>
+            <div><div class="stat-value">3</div><div class="stat-label">Avisos enviados</div><div class="stat-trend up">▲ Esta semana</div></div>
+          </div>
+        </div>
+        <div class="dash-grid">
+          <div class="card">
+            <div class="card-header"><div class="card-title"><i class="fas fa-clock"></i> Aulas de hoje</div></div>
+            <div class="activities-list">
+              <div class="activity-item" data-goto="diario"><div class="activity-dot purple"></div><div class="activity-info"><div class="activity-title">3º Ano A – Matemática</div><div class="activity-subject">Sala 12 · Trigonometria</div></div><div class="activity-date">08:00</div></div>
+              <div class="activity-item" data-goto="diario"><div class="activity-dot blue"></div><div class="activity-info"><div class="activity-title">2º Ano B – Matemática</div><div class="activity-subject">Sala 08 · Funções</div></div><div class="activity-date">10:00</div></div>
+              <div class="activity-item" data-goto="calendario"><div class="activity-dot yellow"></div><div class="activity-info"><div class="activity-title">Reunião pedagógica</div><div class="activity-subject">Sala dos professores</div></div><div class="activity-date">16:00</div></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title"><i class="fas fa-exclamation-circle"></i> Pendências</div></div>
+            <div class="notices-list">
+              <div class="notice-item urgent" data-goto="lancar-notas"><div class="notice-tag">Notas</div><div class="notice-title">Lançar notas do 3º Ano A</div><div class="notice-date">Prazo: 28/03</div></div>
+              <div class="notice-item info" data-goto="frequencia"><div class="notice-tag">Frequência</div><div class="notice-title">Registrar chamada de ontem</div><div class="notice-date">2º Ano B</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── BOLETIM PAGE ─── -->
+      <div class="page page-aluno" id="page-boletim">
+        <div class="page-header">
+          <h2>Boletim de Notas</h2>
+          <p>Acompanhe seu desempenho por bimestre</p>
+        </div>
+
+        <div class="periodo-tabs" id="boletimTabs">
+          <div class="periodo-tab active" data-bim="0">1º Bimestre</div>
+          <div class="periodo-tab" data-bim="1">2º Bimestre</div>
+          <div class="periodo-tab" data-bim="2">3º Bimestre</div>
+          <div class="periodo-tab" data-bim="3">4º Bimestre</div>
+        </div>
+
+        <div class="card">
+          <table class="boletim-table">
+            <thead>
+              <tr>
+                <th>Disciplina</th>
+                <th>Prova 1</th>
+                <th>Trabalho</th>
+                <th>Participação</th>
+                <th>Média</th>
+                <th>Frequência</th>
+                <th>Situação</th>
+              </tr>
+            </thead>
+            <tbody id="boletimBody">
+              <tr>
+                <td><strong>Matemática</strong></td>
+                <td><span class="grade-pill a">9.5</span></td>
+                <td><span class="grade-pill a">8.0</span></td>
+                <td><span class="grade-pill a">10</span></td>
+                <td><strong>9.2</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:96%"></div></div> 96%</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Aprovado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Português</strong></td>
+                <td><span class="grade-pill a">8.5</span></td>
+                <td><span class="grade-pill a">9.0</span></td>
+                <td><span class="grade-pill a">8.5</span></td>
+                <td><strong>8.7</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:92%"></div></div> 92%</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Aprovado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Física</strong></td>
+                <td><span class="grade-pill b">6.5</span></td>
+                <td><span class="grade-pill b">7.0</span></td>
+                <td><span class="grade-pill b">6.0</span></td>
+                <td><strong>6.5</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:88%"></div></div> 88%</td>
+                <td><span class="status-badge pending"><i class="fas fa-clock"></i> Atenção</span></td>
+              </tr>
+              <tr>
+                <td><strong>Química</strong></td>
+                <td><span class="grade-pill a">8.0</span></td>
+                <td><span class="grade-pill a">8.5</span></td>
+                <td><span class="grade-pill a">9.0</span></td>
+                <td><strong>8.5</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:94%"></div></div> 94%</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Aprovado</span></td>
+              </tr>
+              <tr>
+                <td><strong>História</strong></td>
+                <td><span class="grade-pill a">9.0</span></td>
+                <td><span class="grade-pill a">8.0</span></td>
+                <td><span class="grade-pill a">10</span></td>
+                <td><strong>9.0</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:98%"></div></div> 98%</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Aprovado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Biologia</strong></td>
+                <td><span class="grade-pill a">7.5</span></td>
+                <td><span class="grade-pill a">8.0</span></td>
+                <td><span class="grade-pill b">7.0</span></td>
+                <td><strong>7.5</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:90%"></div></div> 90%</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Aprovado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Inglês</strong></td>
+                <td><span class="grade-pill c">5.0</span></td>
+                <td><span class="grade-pill b">6.5</span></td>
+                <td><span class="grade-pill b">6.0</span></td>
+                <td><strong>5.8</strong></td>
+                <td><div class="progress-bar-wrap"><div class="progress-bar" style="width:82%"></div></div> 82%</td>
+                <td><span class="status-badge late"><i class="fas fa-exclamation"></i> Recuperação</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ─── AVA PAGE ─── -->
+      <div class="page page-aluno" id="page-ava">
+        <div class="page-header">
+          <h2>Ambiente Virtual de Aprendizagem</h2>
+          <p>Acesse videoaulas, materiais e acompanhe seu progresso</p>
+        </div>
+
+        <div class="ava-grid">
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-purple"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=600&q=80" alt="Matematica"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 24 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">Matemática Avançada</div>
+              <div class="ava-teacher">Prof. Carlos Eduardo</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>78%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:78%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 24 aulas</span>
+                <span><i class="fas fa-file-alt"></i> 8 materiais</span>
+                <span><i class="fas fa-comments"></i> Fórum ativo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-blue"><img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=600&q=80" alt="Quimica"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 18 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">Química Orgânica</div>
+              <div class="ava-teacher">Profa. Márcia Silva</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>62%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:62%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 18 aulas</span>
+                <span><i class="fas fa-file-alt"></i> 12 materiais</span>
+                <span><i class="fas fa-book"></i> 3 livros</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-yellow"><img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=600&q=80" alt="Fisica"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 20 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">Física – Termodinâmica</div>
+              <div class="ava-teacher">Prof. Roberto Alves</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>45%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:45%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 20 aulas</span>
+                <span><i class="fas fa-file-alt"></i> 6 materiais</span>
+                <span><i class="fas fa-comments"></i> Fórum</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-green"><img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?auto=format&fit=crop&w=600&q=80" alt="Biologia"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 16 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">Biologia Celular</div>
+              <div class="ava-teacher">Profa. Juliana Costa</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>88%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:88%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 16 aulas</span>
+                <span><i class="fas fa-file-alt"></i> 9 materiais</span>
+                <span><i class="fas fa-book"></i> 2 livros</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-red"><img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=600&q=80" alt="Historia"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 22 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">História do Brasil</div>
+              <div class="ava-teacher">Prof. André Ferreira</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>95%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:95%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 22 aulas</span>
+                <span><i class="fas fa-file-alt"></i> 15 materiais</span>
+                <span><i class="fas fa-comments"></i> Fórum ativo</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ava-course-card">
+            <div class="ava-thumb thumb-teal"><img src="https://images.unsplash.com/photo-1456513080880-7d93d20b3375?auto=format&fit=crop&w=600&q=80" alt="Ingles"><div class="thumb-overlay"></div><div class="thumb-icon"><i class="fas fa-play"></i> 30 aulas</div></div>
+            <div class="ava-info">
+              <div class="ava-course-name">Inglês Intermediário</div>
+              <div class="ava-teacher">Profa. Sarah Johnson</div>
+              <div class="ava-progress-wrap">
+                <div class="ava-progress-label"><span>Progresso</span><span>52%</span></div>
+                <div class="ava-progress"><div class="ava-progress-fill" style="width:52%"></div></div>
+              </div>
+              <div class="ava-meta">
+                <span><i class="fas fa-play-circle"></i> 30 aulas</span>
+                <span><i class="fas fa-headphones"></i> Áudios</span>
+                <span><i class="fas fa-comments"></i> Fórum</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── FINANCEIRO PAGE ─── -->
+      <div class="page page-aluno" id="page-financeiro">
+        <div class="page-header">
+          <h2>Financeiro</h2>
+          <p>Gerencie seus pagamentos e boletos</p>
+        </div>
+
+        <div class="fin-summary">
+          <div class="fin-card">
+            <div class="fin-label">Total em Dia</div>
+            <div class="fin-value green">R$ 4.800,00</div>
+          </div>
+          <div class="fin-card">
+            <div class="fin-label">Pendente</div>
+            <div class="fin-value red">R$ 960,00</div>
+          </div>
+          <div class="fin-card">
+            <div class="fin-label">Próximo Vencimento</div>
+            <div class="fin-value blue">28/10/2026</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title"><i class="fas fa-list"></i> Extrato de Pagamentos 2026</div>
+          </div>
+          <table class="payments-table">
+            <thead>
+              <tr>
+                <th>Mês</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Vencimento</th>
+                <th>Status</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Janeiro</td>
+                <td>Mensalidade – 3º Ano</td>
+                <td><strong>R$ 960,00</strong></td>
+                 <td>28/01/2026</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Pago</span></td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Fevereiro</td>
+                <td>Mensalidade – 3º Ano</td>
+                <td><strong>R$ 960,00</strong></td>
+                 <td>28/02/2026</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Pago</span></td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Março</td>
+                <td>Mensalidade – 3º Ano</td>
+                <td><strong>R$ 960,00</strong></td>
+                 <td>28/03/2026</td>
+                <td><span class="status-badge paid"><i class="fas fa-check"></i> Pago</span></td>
+                <td>–</td>
+              </tr>
+              <tr>
+                <td>Abril</td>
+                <td>Mensalidade – 3º Ano</td>
+                <td><strong>R$ 960,00</strong></td>
+                 <td>28/04/2026</td>
+                <td><span class="status-badge pending"><i class="fas fa-clock"></i> Pendente</span></td>
+                <td><button class="btn-boleto" onclick="showToast('Boleto gerado com sucesso!','success')"><i class="fas fa-barcode"></i> Gerar Boleto</button></td>
+              </tr>
+              <tr>
+                <td>Maio</td>
+                <td>Mensalidade – 3º Ano</td>
+                <td><strong>R$ 960,00</strong></td>
+                 <td>28/05/2026</td>
+                <td><span class="status-badge pending"><i class="fas fa-clock"></i> Em aberto</span></td>
+                <td><button class="btn-boleto" onclick="showToast('Boleto gerado com sucesso!','success')"><i class="fas fa-barcode"></i> Gerar Boleto</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ─── BIBLIOTECA PAGE ─── -->
+      <div class="page page-aluno" id="page-biblioteca">
+        <div class="page-header">
+          <h2>Biblioteca Virtual</h2>
+          <p>Acesse livros digitais, apostilas e materiais de estudo</p>
+        </div>
+
+        <div class="library-search-bar">
+          <input class="lib-search-input" id="libSearchInput" type="text" placeholder="Buscar por título, autor ou disciplina...">
+          <button class="btn-search" id="libSearchBtn"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+
+        <div class="books-grid" id="booksGrid">
+          <div class="book-card">
+            <div class="book-cover thumb-purple"><img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=400&q=80" alt="Algebra"></div>
+            <div class="book-info">
+              <div class="book-title">Álgebra Linear e suas Aplicações</div>
+              <div class="book-author">David C. Lay</div>
+              <span class="book-tag matematica">Matemática</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-teal"><img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=400&q=80" alt="Biologia celular"></div>
+            <div class="book-info">
+              <div class="book-title">Biologia Celular e Molecular</div>
+              <div class="book-author">Alberts et al.</div>
+              <span class="book-tag ciencias">Ciências</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-red"><img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" alt="Dom Casmurro"></div>
+            <div class="book-info">
+              <div class="book-title">Dom Casmurro</div>
+              <div class="book-author">Machado de Assis</div>
+              <span class="book-tag literatura">Literatura</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-yellow"><img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?auto=format&fit=crop&w=400&q=80" alt="Fisica"></div>
+            <div class="book-info">
+              <div class="book-title">Fundamentos de Física</div>
+              <div class="book-author">Halliday & Resnick</div>
+              <span class="book-tag ciencias">Física</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-blue"><img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="Historia"></div>
+            <div class="book-info">
+              <div class="book-title">História Geral e do Brasil</div>
+              <div class="book-author">Boris Fausto</div>
+              <span class="book-tag historia">História</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-green"><img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?auto=format&fit=crop&w=400&q=80" alt="Quimica"></div>
+            <div class="book-info">
+              <div class="book-title">Química Geral – Princípios</div>
+              <div class="book-author">Peter Atkins</div>
+              <span class="book-tag ciencias">Química</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-purple"><img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=400&q=80" alt="Grande Sertao"></div>
+            <div class="book-info">
+              <div class="book-title">Grande Sertão: Veredas</div>
+              <div class="book-author">Guimarães Rosa</div>
+              <span class="book-tag literatura">Literatura</span>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover thumb-blue"><img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=400&q=80" alt="Calculo"></div>
+            <div class="book-info">
+              <div class="book-title">Cálculo – Vol. 1</div>
+              <div class="book-author">James Stewart</div>
+              <span class="book-tag matematica">Matemática</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── MENSAGENS PAGE ─── -->
+      <div class="page" id="page-mensagens">
+        <div class="page-header">
+          <h2>Mensagens</h2>
+          <p>Converse com professores e tutores</p>
+        </div>
+
+        <div class="msg-layout">
+          <div class="msg-contacts">
+            <div class="msg-contacts-header"><h4>Conversas</h4></div>
+            <div class="msg-contact-list">
+              <div class="msg-contact active" onclick="selectContact(this, 'Prof. Carlos Eduardo', 'Matemática')">
+                <div class="contact-avatar ca-purple"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Prof. Carlos"></div>
+                <div class="contact-info">
+                  <div class="contact-name">Prof. Carlos Eduardo</div>
+                  <div class="contact-preview">Ótima dúvida! O método é...</div>
+                </div>
+                <div class="contact-time">14:32</div>
+              </div>
+              <div class="msg-contact" onclick="selectContact(this, 'Profa. Márcia Silva', 'Química')">
+                <div class="contact-avatar ca-blue"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80" alt="Profa. Marcia"></div>
+                <div class="contact-info">
+                  <div class="contact-name">Profa. Márcia Silva</div>
+                  <div class="contact-preview">Enviei o material do cap. 5</div>
+                </div>
+                <div class="contact-time">11:20</div>
+              </div>
+              <div class="msg-contact" onclick="selectContact(this, 'Tutor João Lima', 'Suporte Pedagógico')">
+                <div class="contact-avatar ca-yellow"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Tutor Joao"></div>
+                <div class="contact-info">
+                  <div class="contact-name">Tutor João Lima</div>
+                  <div class="contact-preview">Agendei a sessão para sexta</div>
+                </div>
+                <div class="contact-time">Ontem</div>
+              </div>
+              <div class="msg-contact" onclick="selectContact(this, 'Profa. Juliana Costa', 'Biologia')">
+                <div class="contact-avatar ca-green"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Profa. Juliana"></div>
+                <div class="contact-info">
+                  <div class="contact-name">Profa. Juliana Costa</div>
+                  <div class="contact-preview">O seminário está ótimo!</div>
+                </div>
+                <div class="contact-time">Seg</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="msg-main">
+            <div class="msg-main-header">
+              <div class="contact-avatar ca-purple" style="width:36px;height:36px"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80" alt="Prof. Carlos"></div>
+              <div>
+                <h4 id="msgContactName">Prof. Carlos Eduardo</h4>
+                <p>● Online agora</p>
+              </div>
+            </div>
+
+            <div class="msg-thread" id="msgThread">
+              <div class="msg-bubble-wrap">
+                <div class="bubble-avatar ca-purple" style="background:var(--purple-xlight);color:var(--purple);font-size:0.65rem;font-weight:700">CE</div>
+                <div>
+                  <div class="msg-bubble other">Olá, Ana! Vi que você teve algumas dúvidas na lista de trigonometria. O que posso te ajudar?</div>
+                  <div class="msg-time">14:28</div>
+                </div>
+              </div>
+              <div class="msg-bubble-wrap mine">
+                <div class="bubble-avatar" style="background:var(--purple);color:white;font-size:0.65rem;font-weight:700">AM</div>
+                <div>
+                  <div class="msg-bubble mine">Oi, Professor! Sim, estou com dificuldade na questão 7. Como calculo o seno de 75°?</div>
+                  <div class="msg-time">14:30</div>
+                </div>
+              </div>
+              <div class="msg-bubble-wrap">
+                <div class="bubble-avatar ca-purple" style="background:var(--purple-xlight);color:var(--purple);font-size:0.65rem;font-weight:700">CE</div>
+                <div>
+                  <div class="msg-bubble other">Ótima dúvida! O método mais simples é usar a adição de arcos: sen(75°) = sen(45° + 30°). Aplique a fórmula sen(a+b) = sen(a)cos(b) + cos(a)sen(b)!</div>
+                  <div class="msg-time">14:32</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="msg-input-wrap">
+              <input class="msg-input" id="msgInput" type="text" placeholder="Digite sua mensagem..." onkeydown="if(event.key==='Enter') sendMsg()">
+              <button class="btn-send" onclick="sendMsg()"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── SECRETARIA PAGE ─── -->
+      <div class="page page-aluno" id="page-secretaria">
+        <div class="page-header">
+          <h2>Secretaria Virtual</h2>
+          <p>Solicite documentos e serviços administrativos</p>
+        </div>
+
+        <div class="secretaria-grid">
+          <div class="secretaria-card">
+            <div class="sec-icon purple"><i class="fas fa-file-alt"></i></div>
+            <div class="sec-info">
+              <h4>Declaração de Matrícula</h4>
+              <p>Emita sua declaração de matrícula atualizada para uso em bancos, concursos e outros fins.</p>
+              <div class="sec-btn" onclick="showToast('Declaração gerada! Verifique seu e-mail.','success')">Emitir Documento</div>
+            </div>
+          </div>
+          <div class="secretaria-card">
+            <div class="sec-icon blue"><i class="fas fa-id-card"></i></div>
+            <div class="sec-info">
+              <h4>Carteirinha Estudantil</h4>
+              <p>Solicite a segunda via da sua carteirinha estudantil digital ou física.</p>
+              <div class="sec-btn" onclick="showToast('Solicitação enviada com sucesso!','success')">Solicitar Carteirinha</div>
+            </div>
+          </div>
+          <div class="secretaria-card">
+            <div class="sec-icon yellow"><i class="fas fa-exchange-alt"></i></div>
+            <div class="sec-info">
+              <h4>Alteração de Turno</h4>
+              <p>Solicite transferência entre turnos matutino, vespertino ou noturno sujeito a disponibilidade.</p>
+              <div class="sec-btn" onclick="showToast('Solicitação de troca enviada!','info')">Solicitar Alteração</div>
+            </div>
+          </div>
+          <div class="secretaria-card">
+            <div class="sec-icon green"><i class="fas fa-redo"></i></div>
+            <div class="sec-info">
+              <h4>Renovação de Matrícula</h4>
+              <p>Renove sua matrícula para o próximo semestre letivo antes do prazo estabelecido.</p>
+              <div class="sec-btn" onclick="showToast('Rematrícula iniciada! Complete o processo.','info')">Iniciar Renovação</div>
+            </div>
+          </div>
+          <div class="secretaria-card">
+            <div class="sec-icon purple"><i class="fas fa-scroll"></i></div>
+            <div class="sec-info">
+              <h4>Histórico Escolar</h4>
+              <p>Emita o histórico escolar oficial com todas as disciplinas cursadas e notas.</p>
+              <div class="sec-btn" onclick="goToPage('historico')">Emitir Histórico</div>
+            </div>
+          </div>
+          <div class="secretaria-card">
+            <div class="sec-icon blue"><i class="fas fa-calendar-check"></i></div>
+            <div class="sec-info">
+              <h4>Atestado de Frequência</h4>
+              <p>Solicite o atestado de frequência do semestre atual com assinatura digital.</p>
+              <div class="sec-btn" onclick="showToast('Atestado gerado! Verifique seu e-mail.','success')">Gerar Atestado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── AVALIAÇÃO PAGE ─── -->
+      <div class="page page-aluno" id="page-avaliacao">
+        <div class="page-header">
+          <h2>Avaliação de Docentes</h2>
+          <p>Sua opinião melhora a qualidade do ensino</p>
+        </div>
+
+        <div class="prof-grid">
+          <div class="prof-card">
+            <div class="prof-header">
+              <div class="prof-avatar ca-purple"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&q=80" alt="Prof. Carlos"></div>
+              <div class="prof-info">
+                <h4>Prof. Carlos Eduardo</h4>
+                <p>Matemática – 3º Ano A</p>
+              </div>
+            </div>
+            <div class="stars" data-prof="1">
+              <span class="star active" onclick="rateStar(this,1)">★</span>
+              <span class="star active" onclick="rateStar(this,2)">★</span>
+              <span class="star active" onclick="rateStar(this,3)">★</span>
+              <span class="star active" onclick="rateStar(this,4)">★</span>
+              <span class="star" onclick="rateStar(this,5)">★</span>
+            </div>
+            <textarea class="eval-textarea" placeholder="Deixe seu comentário sobre o professor..."></textarea>
+            <button class="btn-eval" onclick="showToast('Avaliação enviada. Obrigada!','success')"><i class="fas fa-paper-plane"></i> Enviar Avaliação</button>
+          </div>
+
+          <div class="prof-card">
+            <div class="prof-header">
+              <div class="prof-avatar"><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=160&q=80" alt="Profa. Marcia"></div>
+              <div class="prof-info">
+                <h4>Profa. Márcia Silva</h4>
+                <p>Química – 3º Ano A</p>
+              </div>
+            </div>
+            <div class="stars" data-prof="2">
+              <span class="star active" onclick="rateStar(this,1)">★</span>
+              <span class="star active" onclick="rateStar(this,2)">★</span>
+              <span class="star active" onclick="rateStar(this,3)">★</span>
+              <span class="star active" onclick="rateStar(this,4)">★</span>
+              <span class="star active" onclick="rateStar(this,5)">★</span>
+            </div>
+            <textarea class="eval-textarea" placeholder="Deixe seu comentário..."></textarea>
+            <button class="btn-eval" onclick="showToast('Avaliação enviada. Obrigada!','success')"><i class="fas fa-paper-plane"></i> Enviar Avaliação</button>
+          </div>
+
+          <div class="prof-card">
+            <div class="prof-header">
+              <div class="prof-avatar"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=160&q=80" alt="Prof. Roberto"></div>
+              <div class="prof-info">
+                <h4>Prof. Roberto Alves</h4>
+                <p>Física – 3º Ano A</p>
+              </div>
+            </div>
+            <div class="stars" data-prof="3">
+              <span class="star active" onclick="rateStar(this,1)">★</span>
+              <span class="star active" onclick="rateStar(this,2)">★</span>
+              <span class="star active" onclick="rateStar(this,3)">★</span>
+              <span class="star" onclick="rateStar(this,4)">★</span>
+              <span class="star" onclick="rateStar(this,5)">★</span>
+            </div>
+            <textarea class="eval-textarea" placeholder="Deixe seu comentário..."></textarea>
+            <button class="btn-eval" onclick="showToast('Avaliação enviada. Obrigada!','success')"><i class="fas fa-paper-plane"></i> Enviar Avaliação</button>
+          </div>
+
+          <div class="prof-card">
+            <div class="prof-header">
+              <div class="prof-avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&q=80" alt="Profa. Juliana"></div>
+              <div class="prof-info">
+                <h4>Profa. Juliana Costa</h4>
+                <p>Biologia – 3º Ano A</p>
+              </div>
+            </div>
+            <div class="stars" data-prof="4">
+              <span class="star active" onclick="rateStar(this,1)">★</span>
+              <span class="star active" onclick="rateStar(this,2)">★</span>
+              <span class="star active" onclick="rateStar(this,3)">★</span>
+              <span class="star active" onclick="rateStar(this,4)">★</span>
+              <span class="star active" onclick="rateStar(this,5)">★</span>
+            </div>
+            <textarea class="eval-textarea" placeholder="Deixe seu comentário..."></textarea>
+            <button class="btn-eval" onclick="showToast('Avaliação enviada. Obrigada!','success')"><i class="fas fa-paper-plane"></i> Enviar Avaliação</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── PLACEHOLDER PAGES ─── -->
+      <div class="page" id="page-calendario">
+        <div class="page-header"><h2>Calendário Acadêmico</h2><p>Navegue pelos meses e clique em um dia para ver os eventos</p></div>
+        <div class="cal-layout">
+          <div class="card">
+            <div class="cal-toolbar">
+              <div class="cal-toolbar-left">
+                <button class="cal-nav-btn" onclick="calShift(-1)" title="Mês anterior"><i class="fas fa-chevron-left"></i></button>
+                <div class="cal-month-label" id="fullCalLabel">—</div>
+                <button class="cal-nav-btn" onclick="calShift(1)" title="Próximo mês"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              <button class="btn-today" id="calTodayBtn" onclick="calToday()">Hoje</button>
+            </div>
+            <div class="cal-full-days" id="fullCalGrid"></div>
+            <div class="cal-legend">
+              <span><i style="background:var(--purple)"></i> Hoje</span>
+              <span><i style="background:var(--yellow-dark)"></i> Com eventos</span>
+              <span><i style="background:var(--purple-xlight)"></i> Dia selecionado</span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="cal-side-title" id="calSideTitle">Eventos do dia</div>
+            <div class="cal-side-sub" id="calSideSub">Selecione um dia no calendário</div>
+            <div class="event-list" id="calEventList"></div>
+            <button class="btn-today" id="calAddBtn" style="margin-top:16px;width:100%" onclick="calAddEvent()">
+              <i class="fas fa-plus"></i> Adicionar evento
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page-aluno" id="page-grade">
+        <div class="page-header"><h2>Grade de Disciplinas</h2><p>Confira sua grade horária semanal</p></div>
+        <div class="card">
+          <table class="boletim-table">
+            <thead><tr><th>Horário</th><th>Segunda</th><th>Terça</th><th>Quarta</th><th>Quinta</th><th>Sexta</th></tr></thead>
+            <tbody>
+              <tr><td>07:00–08:00</td><td>Matemática</td><td>Português</td><td>Física</td><td>Biologia</td><td>História</td></tr>
+              <tr><td>08:00–09:00</td><td>Química</td><td>Inglês</td><td>Matemática</td><td>Português</td><td>Química</td></tr>
+              <tr><td>09:00–10:00</td><td>Física</td><td>História</td><td>Biologia</td><td>Inglês</td><td>Matemática</td></tr>
+              <tr><td>10:00–11:00</td><td>Inglês</td><td>Biologia</td><td>Português</td><td>Física</td><td>Ed. Física</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="page page-aluno" id="page-historico">
+        <div class="page-header"><h2>Histórico Escolar</h2><p>Seu histórico acadêmico completo</p></div>
+        <div class="card">
+          <div class="card-header"><div class="card-title"><i class="fas fa-scroll"></i> Histórico – Ana Martins</div><button class="btn-boleto" onclick="showToast('Histórico exportado em PDF!','success')"><i class="fas fa-download"></i> Exportar PDF</button></div>
+          <p style="color:var(--gray-600);font-size:0.88rem;margin-bottom:16px">Matrícula: 2023001547 · Curso: Ensino Médio · Turma: 3º Ano A</p>
+          <table class="boletim-table">
+            <thead><tr><th>Ano</th><th>Disciplina</th><th>Carga Horária</th><th>Nota Final</th><th>Situação</th></tr></thead>
+            <tbody>
+              <tr><td>2023 – 1º Ano</td><td>Matemática</td><td>120h</td><td>8.5</td><td><span class="status-badge paid">Aprovado</span></td></tr>
+              <tr><td>2023 – 1º Ano</td><td>Português</td><td>120h</td><td>9.0</td><td><span class="status-badge paid">Aprovado</span></td></tr>
+              <tr><td>2024 – 2º Ano</td><td>Matemática</td><td>120h</td><td>8.8</td><td><span class="status-badge paid">Aprovado</span></td></tr>
+              <tr><td>2024 – 2º Ano</td><td>Física</td><td>80h</td><td>7.5</td><td><span class="status-badge paid">Aprovado</span></td></tr>
+              <tr><td>2026 – 3º Ano</td><td>Todas</td><td>Em curso</td><td>–</td><td><span class="status-badge pending">Em Curso</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="page" id="page-perfil">
+        <div class="page-header">
+          <h2>Meu Perfil</h2>
+          <p>Dados pessoais e foto do portal</p>
+        </div>
+        <div class="perfil-grid">
+          <div class="card perfil-photo-card">
+            <img class="perfil-photo-big js-user-photo" id="perfilPhotoBig" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=280&q=80" alt="Foto de perfil">
+            <div class="perfil-photo-actions">
+              <button class="btn-photo" onclick="openPhotoPicker()"><i class="fas fa-camera"></i> Escolher imagem</button>
+              <button class="btn-photo ghost" onclick="resetPhoto()"><i class="fas fa-undo"></i> Restaurar padrão</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><i class="fas fa-id-badge"></i> Dados do aluno</div>
+            </div>
+            <div class="perfil-field"><label>Nome</label><span id="perfilNome">Ana Martins</span></div>
+            <div class="perfil-field"><label>CPF</label><span id="perfilCpf">—</span></div>
+            <div class="perfil-field"><label>E-mail</label><span id="perfilEmail">—</span></div>
+            <div class="perfil-field"><label>Série</label><span id="perfilSerie">3º Ano</span></div>
+            <div class="perfil-field"><label>Turno</label><span id="perfilTurno">—</span></div>
+            <div class="perfil-field"><label>Matrícula</label><span id="perfilMatricula">2023001547</span></div>
+            <div class="perfil-field"><label>Curso</label><span>Ensino Médio</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page-aluno" id="page-carteira">
+        <div class="page-header">
+          <h2>Carteira de Estudante</h2>
+          <p>Identidade escolar digital 2026</p>
+        </div>
+        <div class="carteira-wrap">
+          <div class="carteira-card">
+            <div class="carteira-top">
+              <div class="carteira-school">Colégio Pequeno Aprendiz</div>
+              <div class="carteira-year">2026</div>
+            </div>
+            <div class="carteira-body">
+              <div class="carteira-photo-wrap">
+                <img class="carteira-photo js-user-photo" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=240&q=80" alt="Foto do aluno">
+                <button class="carteira-photo-btn" title="Alterar foto" onclick="openPhotoPicker()"><i class="fas fa-camera"></i></button>
+              </div>
+              <div class="carteira-info">
+                <h3 id="carteiraNome">Ana Martins</h3>
+                <div class="carteira-row"><strong>Matrícula</strong><span id="carteiraMat">2023001547</span></div>
+                <div class="carteira-row"><strong>Série / Turno</strong><span id="carteiraSerie">3º Ano · Manhã</span></div>
+                <div class="carteira-row"><strong>CPF</strong><span id="carteiraCpf">—</span></div>
+                <div class="carteira-row"><strong>Curso</strong><span>Ensino Médio</span></div>
+              </div>
+            </div>
+            <div class="carteira-footer">
+              <div class="carteira-qr" aria-hidden="true">
+                <span></span><span class="empty"></span><span></span><span></span><span class="empty"></span>
+                <span></span><span></span><span class="empty"></span><span></span><span></span>
+                <span class="empty"></span><span></span><span></span><span class="empty"></span><span></span>
+                <span></span><span class="empty"></span><span></span><span></span><span></span>
+                <span></span><span></span><span class="empty"></span><span></span><span class="empty"></span>
+              </div>
+              <div class="carteira-valid">Válida até<strong>31/12/2026</strong></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title"><i class="fas fa-info-circle"></i> Como usar</div>
+            </div>
+            <p style="color:var(--gray-600);font-size:0.88rem;line-height:1.6;margin-bottom:14px">Apresente esta carteira digital na portaria, biblioteca e refeitório. A foto pode ser atualizada a qualquer momento.</p>
+            <button class="btn-boleto" onclick="showToast('Carteira pronta para apresentação.','success')"><i class="fas fa-expand"></i> Apresentar carteira</button>
+            <button class="btn-boleto" style="margin-left:8px;background:var(--purple)" onclick="openPhotoPicker()"><i class="fas fa-camera"></i> Trocar foto</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-turmas">
+        <div class="page-header"><h2>Minhas Turmas</h2><p>Turmas atribuídas neste semestre</p></div>
+        <div class="turma-grid">
+          <div class="turma-card" onclick="goToPage('lancar-notas')"><h4>3º Ano A</h4><p>Matemática · 32 alunos · Manhã</p></div>
+          <div class="turma-card" onclick="goToPage('lancar-notas')"><h4>3º Ano B</h4><p>Matemática · 30 alunos · Manhã</p></div>
+          <div class="turma-card" onclick="goToPage('lancar-notas')"><h4>2º Ano B</h4><p>Matemática · 34 alunos · Tarde</p></div>
+          <div class="turma-card" onclick="goToPage('lancar-notas')"><h4>1º Ano C</h4><p>Matemática · 32 alunos · Manhã</p></div>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-lancar-notas">
+        <div class="page-header"><h2>Lançar Notas</h2><p>3º Ano A · Matemática · 3º bimestre</p></div>
+        <div class="card">
+          <div class="aluno-row"><div style="flex:1"><strong>Ana Martins</strong><div style="font-size:0.75rem;color:var(--gray-600)">Matrícula 2023001547</div></div><input class="grade-input" value="8.5"></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Bruno Silva</strong><div style="font-size:0.75rem;color:var(--gray-600)">Matrícula 2023001620</div></div><input class="grade-input" value="7.0"></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Carla Souza</strong><div style="font-size:0.75rem;color:var(--gray-600)">Matrícula 2023001488</div></div><input class="grade-input" value="9.2"></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Diego Alves</strong><div style="font-size:0.75rem;color:var(--gray-600)">Matrícula 2023001711</div></div><input class="grade-input" value="6.5"></div>
+          <button class="btn-primary" style="margin-top:16px;max-width:220px" onclick="showToast('Notas lançadas com sucesso.','success')">Salvar notas</button>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-frequencia">
+        <div class="page-header"><h2>Frequência</h2><p>Chamada de hoje · 3º Ano A</p></div>
+        <div class="card">
+          <div class="aluno-row"><div style="flex:1"><strong>Ana Martins</strong></div><button class="freq-toggle on" onclick="toggleFreq(this)">P</button></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Bruno Silva</strong></div><button class="freq-toggle on" onclick="toggleFreq(this)">P</button></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Carla Souza</strong></div><button class="freq-toggle on" onclick="toggleFreq(this)">P</button></div>
+          <div class="aluno-row"><div style="flex:1"><strong>Diego Alves</strong></div><button class="freq-toggle off" onclick="toggleFreq(this)">F</button></div>
+          <button class="btn-primary" style="margin-top:16px;max-width:220px" onclick="showToast('Frequência registrada.','success')">Confirmar chamada</button>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-diario">
+        <div class="page-header"><h2>Diário de Classe</h2><p>Conteúdo ministrado</p></div>
+        <div class="card">
+          <div class="form-group"><label>Turma</label><select class="select-input" style="padding-left:14px"><option>3º Ano A</option><option>3º Ano B</option><option>2º Ano B</option></select></div>
+          <div class="form-group"><label>Conteúdo da aula</label><textarea class="eval-textarea" placeholder="Ex.: Trigonometria – seno, cosseno e tangente"></textarea></div>
+          <button class="btn-primary" style="max-width:220px" onclick="showToast('Aula registrada no diário.','success')">Salvar no diário</button>
+        </div>
+      </div>
+
+      <div class="page page-prof" id="page-avisos">
+        <div class="page-header"><h2>Avisos às turmas</h2><p>Comunicados para os alunos</p></div>
+        <div class="card">
+          <div class="form-group"><label>Turma</label><select class="select-input" style="padding-left:14px"><option>Todas as turmas</option><option>3º Ano A</option><option>3º Ano B</option></select></div>
+          <div class="form-group"><label>Mensagem</label><textarea class="eval-textarea" placeholder="Escreva o aviso..."></textarea></div>
+          <button class="btn-primary" style="max-width:220px" onclick="showToast('Aviso enviado às turmas.','success')">Enviar aviso</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+<script src="js/utils.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/session.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/notifications.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/messages.js"></script>
+<script src="js/avaliacao.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/calendar.js"></script>
+<script src="js/boletim.js"></script>
+<script src="js/ava.js"></script>
+<script src="js/biblioteca.js"></script>
+<script src="js/search.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
