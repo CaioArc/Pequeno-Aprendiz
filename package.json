@@ -1,0 +1,8 @@
+{
+  "name": "pequeno-aprendiz",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/portal.test.js"
+  }
+}
